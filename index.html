@@ -143,14 +143,18 @@
 			padding: 25px 0;
 		}
 
-		nav > span {
+		nav div {
+			display: flex;
+		}
+
+		nav span {
 			text-transform: uppercase;
 			font-weight: 700;
 			font-size: 20px;
 			line-height: 26px;
 		}
 
-		nav > .header-logo {
+		nav .header-logo {
 			display: inline-block;
 			background-image: var(--logo-asset);
 			background-size: contain;
@@ -322,8 +326,10 @@
 		</div>
 	</div>
 	<nav class="container">
-		<div class="header-logo"></div>
-		<span>Beak</span>
+		<div>
+			<div class="header-logo"></div>
+			<span>Beak</span>
+		</div>
 	</nav>
 	<main class="container">
 		<section class="welcome">
