@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome to Beak</title>
+
+	<script src="https://kit.fontawesome.com/9f03cc4439.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+
+	<style>
+		@keyframes style-blob-load-bounce {
+			0% {
+				transform: translateY(-200px) rotate(30deg);
+			}
+			50% {
+				transform: translateY(-200px) rotate(30deg);
+			}
+			80% {
+				transform: translateY(20px) rotate(30deg);
+			}
+			100% {
+				transform: translateY(0) rotate(30deg);
+			}
+		}
+
+		:root {
+			--logo-asset: url('/assets/logo.svg');
+			--ds-primary-fill: #d45d80;
+			--ds-primary-fill-rgb: 212, 93, 128;
+			--ds-background: #f2f2f2;
+			--ds-text-on-surface: #3A3F55;
+			--ds-text-on-surface-secondary: #4B5178;
+
+			--ds-background-border-separator: #1a1e2d;
+		}
+
+		body {
+			font-family: 'Open Sans', sans-serif;
+			background: var(--ds-background);
+			color: var(--ds-text-on-surface);
+		}
+
+		input[type=email] {
+			border: 1px solid var(--ds-background-border-separator);
+			border-radius: 4px;
+			padding: 8px 8px;
+			font-size: 15px;
+
+			width: 300px;
+		}
+		input[type=email]:focus {
+			outline: var(--ds-primary-fill) auto 1px;
+		}
+
+		input[type=submit] {
+			border: none;
+			border-radius: 6px;
+			background: var(--ds-primary-fill);
+			color: white;
+
+			padding: 9px 12px;
+			font-size: 15px;
+		}
+		input[type=submit]:hover {
+			box-shadow: 0px 4px 22px rgba(var(--ds-primary-fill-rgb), 0.25);
+		}
+
+		.container {
+			box-sizing: border-box;
+			display: block;
+			margin: 0 auto;
+			width: 1100px;
+		}
+
+		.style-blob-base {
+			overflow: hidden;
+			position: absolute;
+			background: var(--ds-primary-fill);
+			box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
+		}
+
+		.style-blob-container {
+			position: relative;
+		}
+
+		.header-style-blob {
+			animation: style-blob-load-bounce 1.5s normal;
+			transform: rotate(30deg);
+		}
+
+		.style-blob-1 {
+			width: 160px;
+			height: 360px;
+			border-radius: 150px;
+
+			margin-top: -275px;
+			margin-left: 375px;
+		}
+
+		.style-blob-2 {
+			width: 112px;
+			height: 250px;
+			border-radius: 80px;
+
+			margin-top: -158px;
+			margin-left: 275px;
+		}
+
+		.style-blob-3 {
+			z-index: -1;
+			width: 125px;
+			height: 280px;
+			border-radius: 150px;
+			transform: rotate(25deg);
+
+			top: -30px;
+			right: 30px;
+		}
+		.style-blob-4 {
+			z-index: -1;
+			width: 125px;
+			height: 280px;
+			border-radius: 150px;
+			transform: rotate(25deg);
+
+			top: 150px;
+			right: 120px;
+		}
+		.style-blob-5 {
+			z-index: -1;
+			width: 260px;
+			height: 600px;
+			border-radius: 150px;
+			transform: rotate(25deg);
+
+			top: -80px;
+			right: -120px;
+		}
+
+		nav {
+			padding: 25px 0;
+		}
+
+		nav > span {
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 26px;
+		}
+
+		nav > .header-logo {
+			display: inline-block;
+			background-image: var(--logo-asset);
+			background-size: contain;
+			width: 43px;
+			height: 26px;
+			margin-right: 10px;
+		}
+
+		.welcome {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 80px;
+		}
+
+		.welcome h1 {
+			font-weight: 800;
+			font-size: 40px;
+			line-height: 120%;
+			letter-spacing: 0.02em;
+		}
+
+		.welcome .text-pane {
+			margin-top: 20px;
+			width: 40%;
+		}
+
+		.welcome .text-pane > h1 > span {
+			color: var(--ds-primary-fill);
+		}
+
+		.points > .point {
+			margin-bottom: 12px;
+		}
+
+		.points > .point > .icon {
+			display: inline-block;
+
+			background: rgba(var(--ds-primary-fill-rgb), 0.74);
+			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.12);
+			width: 30px; height: 30px;
+			border-radius: 100%;
+
+			margin-right: 5px;
+		}
+
+		.points > .point > .icon > i {
+			color: white;
+			margin-top: 7px; margin-left: 8px;
+
+			font-size: 15px;
+		}
+
+		.points > .point > .icon-special > i {
+			color: white;
+			margin-top: 6px; margin-left: 8px;
+
+			font-size: 18px;
+		}
+
+		.points > .point > span {
+			font-weight: bold;
+			font-size: 15px;
+		}
+
+		.points > .point > span > span {
+			color: var(--ds-text-on-surface-secondary);
+		}
+
+		.welcome .visual-pane {
+			width: 60%;
+		}
+
+		.welcome .visual-pane > img {
+			width: 100%;
+		}
+
+		.join {
+			margin: 0 auto;
+			margin-top: 50px;
+			padding: 16px 20px;
+			width: 560px; height: 140px;
+			background: white;
+			box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.18);
+			border-radius: 16px;
+
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.join > .joiner {
+			display: flex;
+			flex-grow: 2;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.join > .joiner > div > span {
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.join > .joiner > div > p {
+			margin-right: 40px;
+			margin-top: 8px;
+			font-size: 14px;
+		}
+
+		.join > .birb {
+			width: 150px;
+			height: 100%;
+			background-image: var(--logo-asset);
+			background-position: center;
+			background-size: 80px;
+			background-repeat: no-repeat;
+		}
+
+		footer {
+			padding-top: 30px;
+			text-align: center;
+			font-weight: bold;
+		}
+		.logo-footer {
+			background-image: var(--logo-asset);
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			margin: 20px auto;
+			height: 30px; width: 100px;
+		}
+
+		@media (min-width: 992px) and (max-width: 1200px) {
+			.container {
+				width: 1000px;
+			}
+		}
+		@media (min-width: 768px) and (max-width: 992px) {
+			.container {
+				width: 800px;
+			}
+		}
+		@media (min-width: 576px) {
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="style-blob-container">
+			<!-- <div class="style-blob-base header-style-blob style-blob-1"></div>
+			<div class="style-blob-base header-style-blob style-blob-2"></div> -->
+		</div>
+	</div>
+	<nav class="container">
+		<div class="header-logo"></div>
+		<span>Beak</span>
+	</nav>
+	<main class="container">
+		<section class="welcome">
+			<div class="text-pane">
+				<h1>A <span>feathery</span> cross platform API crafting tool</h1>
+	
+				<div class="points">
+					<div class="point">
+						<div class="icon"><i class="fas fa-bath"></i></div>
+						<span>Stylish, <span>clean UI</span></span>
+					</div>
+					<div class="point">
+						<div class="icon icon-special"><i class="fab fa-git-alt"></i></div>
+						<span>Powerful, <span>git based revision control</span></span>
+					</div>
+					<div class="point">
+						<div class="icon"><i class="fas fa-dove"></i></div>
+						<span>Deep ML, <span>writes all the code lol</span></span>
+					</div>
+				</div>
+			</div>
+			<div class="visual-pane">
+				<div class="style-blob-container">
+					<!-- <div class="style-blob-base visual-style-blob style-blob-3"></div>
+					<div class="style-blob-base visual-style-blob style-blob-4"></div>
+					<div class="style-blob-base visual-style-blob style-blob-5"></div> -->
+				</div>
+				<img src="/assets/sneak-peak.png" />
+			</div>
+		</section>
+		<section class="join">
+			<div class="joiner">
+				<div>
+					<span>Join the flock</span>
+					<p>
+						Register your interest to join the early access flights, give feedback,
+						and prioritise which features are worked on first.
+					</p>
+				</div>
+
+				<div class="enroll">
+					<form action="https://red.us2.list-manage.com/subscribe/post?u=d62a1e75f710146815bf3f9a7&amp;id=e580e6811f" method="POST">
+						<input
+							placeholder="taylor.swift@getbeak.app"
+							name="EMAIL"
+							id="mce-EMAIL"
+							type="email"
+						/>
+
+						<input type="submit" value="Take flight" />
+					</form>
+				</div>
+			</div>
+			<div class="birb"></div>
+		</section>
+	</main>
+	<footer class="container">
+		<span>Made with ❤️ in the UK</span>
+		<div class="logo-footer"></div>
+	</footer>
+</body>
+</html>
