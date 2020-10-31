@@ -9,6 +9,25 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
 	<link rel="shortcut icon" href="/assets/favicon.ico" />
 
+	<!-- Primary Meta Tags -->
+	<title>A feathery cross platform API crafting tool</title>
+	<meta name="title" content="A feathery cross platform API crafting tool">
+	<meta name="description" content="Stylish and clean UI, powerful git-based revision control. Coming soon 👀">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://getbeak.app/">
+	<meta property="og:title" content="A feathery cross platform API crafting tool">
+	<meta property="og:description" content="Stylish and clean UI, powerful git-based revision control. Coming soon 👀">
+	<meta property="og:image" content="/assets/sneak-peak.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://getbeak.app/">
+	<meta property="twitter:title" content="A feathery cross platform API crafting tool">
+	<meta property="twitter:description" content="Stylish and clean UI, powerful git-based revision control. Coming soon 👀">
+	<meta property="twitter:image" content="/assets/sneak-peak.png">
+
 	<style>
 		@keyframes style-blob-load-bounce {
 			0% {
@@ -240,7 +259,7 @@
 			margin: 0 auto;
 			margin-top: 50px;
 			padding: 16px 20px;
-			width: 560px; height: 140px;
+			width: 560px;
 			background: white;
 			box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.18);
 			border-radius: 16px;
@@ -269,7 +288,6 @@
 
 		.join > .birb {
 			width: 150px;
-			height: 100%;
 			background-image: var(--logo-asset);
 			background-position: center;
 			background-size: 80px;
@@ -301,21 +319,47 @@
 				width: 800px;
 			}
 		}
-		@media (min-width: 768px) and (max-width: 850px) {
+		@media (max-width: 850px) {
 			.container {
 				width: 100%;
 			}
 
-			.text-pane {
+			.welcome {
+				margin: auto 40px;
+				margin-top: 10px;
+
+				flex-direction: column;
+			}
+			
+			.welcome .text-pane {
 				text-align: center;
+				width: 100%;
+				margin-top: 0;
 			}
 
-			.visual-pane {
+			.visual-pane > .style-blob-container {
 				display: none;
 			}
 		}
-		@media (min-width: 576px) {
-
+		@media (max-width: 620px) {
+			.join {
+				width: calc(100% - 60px);
+				margin: auto 10px;
+				margin-top: 20px;
+			}
+			.join > .birb {
+				display: none;
+			}
+		}
+		@media (max-width: 490px) {
+			input[type=email] {
+				width: calc(100% - 16px);
+			}
+			input[type=submit] {
+				display: block;
+				margin-top: 10px;
+				width: 100%;
+			}
 		}
 	</style>
 </head>
