@@ -39,6 +39,7 @@
 			font-family: 'Open Sans', sans-serif;
 			background: var(--ds-background);
 			color: var(--ds-text-on-surface);
+			overflow-x: hidden;
 		}
 
 		input[type=email] {
@@ -191,20 +192,23 @@
 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.12);
 			width: 30px; height: 30px;
 			border-radius: 100%;
+			text-align: center;
+			color: white;
+			font-size: 15px;
 
 			margin-right: 5px;
 		}
 
 		.points > .point > .icon > i {
 			color: white;
-			margin-top: 7px; margin-left: 8px;
+			margin-top: 7px;
 
 			font-size: 15px;
 		}
 
 		.points > .point > .icon-special > i {
 			color: white;
-			margin-top: 6px; margin-left: 8px;
+			margin-top: 6px;
 
 			font-size: 18px;
 		}
@@ -212,6 +216,7 @@
 		.points > .point > span {
 			font-weight: bold;
 			font-size: 15px;
+			line-height: 30px;
 		}
 
 		.points > .point > span > span {
@@ -286,9 +291,22 @@
 				width: 1000px;
 			}
 		}
-		@media (min-width: 768px) and (max-width: 992px) {
+		@media (min-width: 850px) and (max-width: 992px) {
 			.container {
 				width: 800px;
+			}
+		}
+		@media (min-width: 768px) and (max-width: 850px) {
+			.container {
+				width: 100%;
+			}
+
+			.text-pane {
+				text-align: center;
+			}
+
+			.visual-pane {
+				display: none;
 			}
 		}
 		@media (min-width: 576px) {
@@ -299,8 +317,8 @@
 <body>
 	<div class="container">
 		<div class="style-blob-container">
-			<!-- <div class="style-blob-base header-style-blob style-blob-1"></div>
-			<div class="style-blob-base header-style-blob style-blob-2"></div> -->
+			<div class="style-blob-base header-style-blob style-blob-1"></div>
+			<div class="style-blob-base header-style-blob style-blob-2"></div>
 		</div>
 	</div>
 	<nav class="container">
@@ -329,9 +347,9 @@
 			</div>
 			<div class="visual-pane">
 				<div class="style-blob-container">
-					<!-- <div class="style-blob-base visual-style-blob style-blob-3"></div>
+					<div class="style-blob-base visual-style-blob style-blob-3"></div>
 					<div class="style-blob-base visual-style-blob style-blob-4"></div>
-					<div class="style-blob-base visual-style-blob style-blob-5"></div> -->
+					<div class="style-blob-base visual-style-blob style-blob-5"></div>
 				</div>
 				<img src="/assets/sneak-peak.png" />
 			</div>
